@@ -1,0 +1,13 @@
+{
+    "Dyn_PointMass_r2019b": [
+        "",
+        "Environment",
+        "AirborneSystem/FlightControlSystem",
+        "AirborneSystem/FlightControlSystem/PathFollowingController",
+        "GroundSystem/StateMachine",
+        "ParticleTetherModel/Tether"
+    ],
+    "Dyn_6DoF_v2_0_r2019b": [
+        "AirborneSystem/FlightControlSystem"
+    ]
+}
