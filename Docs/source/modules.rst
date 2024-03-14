@@ -25,12 +25,8 @@ Main simulink model
 The following image shows the root level of the simulink model. This shows how the different modules work together.
 This level is similar for both 3DoF and 6DoF simulations.
 
-.. simulink-diagram:: Dyn_PointMass_r2019b
-  :dir: ../../Src/3DoF/Simulink
-  :addpath: ../../Common/Environment;../../Common/FlightController;
-      ../../Common/Flightpaths;../../Common/Flightpaths/boothLem;
-      ../../Common/GroundStation;../../Common/Tether;../../Common/Visualisation;
-      ../..;../../..
+.. image:: simulink_images/Dyn_PointMass_r2019b.png
+
 
 Simulink parts
 ***************
@@ -41,14 +37,7 @@ The following image shows the environment subsystem of the simulink model.
 This subsystem is similar for both 3DoF and 6DoF simulations.
 It is used to determine the wind speed at each tether particle and at the kite.
 
-.. simulink-diagram:: Dyn_PointMass_r2019b
-  :dir: ../../Src/3DoF/Simulink
-  :addpath: ../../Common/Environment;../../Common/FlightController;
-      ../../Common/Flightpaths;../../Common/Flightpaths/boothLem;
-      ../../Common/GroundStation;../../Common/Tether;../../Common/Visualisation;
-      ../..;../../..
-  :subsystem: Environment
-
+.. image:: simulink_images/Dyn_PointMass_r2019b_Environment.png
 
 .. automodule:: Src.Common.Environment
   :members:
@@ -59,23 +48,11 @@ Flight controller
 ------------------
 The following image shows the root level of the flight controller in the case of a 3DoF simulation.
 
-.. simulink-diagram:: Dyn_PointMass_r2019b
-  :dir: ../../Src/3DoF/Simulink
-  :addpath: ../../Common/Environment;../../Common/FlightController;
-      ../../Common/Flightpaths;../../Common/Flightpaths/boothLem;
-      ../../Common/GroundStation;../../Common/Tether;../../Common/Visualisation;
-      ../..;../../..
-  :subsystem: AirborneSystem/FlightControlSystem
+.. image:: simulink_images/Dyn_PointMass_r2019b_AirborneSystem_FlightControlSystem.png
 
 The following image shows the root level of the flight controller in the case of a 6DoF simulation.
 
-.. simulink-diagram:: Dyn_6DoF_v2_0_r2019b
-  :dir: ../../Src/6DoF/Simulink
-  :addpath: ../../Common/Environment;../../Common/FlightController;
-      ../../Common/Flightpaths;../../Common/Flightpaths/boothLem;
-      ../../Common/GroundStation;../../Common/Tether;../../Common/Visualisation;
-      ../..;../../..
-  :subsystem: AirborneSystem/FlightControlSystem
+.. image:: simulink_images/Dyn_6DoF_v2_0_r2019b_AirborneSystem_FlightControlSystem.png
 
 .. automodule:: Src.Common.FlightController
   :members:
@@ -87,13 +64,7 @@ Flightpaths
 These functions are called by the PathFollowingController.
 Not all required functions are shown here. Some functions are only documented inside simulink.
 
-.. .. simulink-diagram:: Dyn_PointMass_r2019b
-..     :dir: ../../Src/3DoF/Simulink
-..     :addpath: ../../Common/Environment;../../Common/FlightController;
-..         ../../Common/Flightpaths;../../Common/Flightpaths/boothLem;
-..         ../../Common/GroundStation;../../Common/Tether;../../Common/Visualisation;
-..         ../..;../../..
-..     :subsystem: AirborneSystem/FlightControlSystem/PathFollowingController
+.. image:: simulink_images/Dyn_PointMass_r2019b_AirborneSystem_FlightControlSystem_PathFollowingController.png
 
 .. automodule:: Src.Common.Flightpaths
   :members:
@@ -112,13 +83,7 @@ This subsystem is similar for both 3DoF and 6DoF simulations.
 Unfortunately, no image can be included of the state machine, however this can be viewed inside simulink.
 Basically the state machine determines in what flight mode the kite needs to be and what the tether force set point is corresponding to that mode.
 
-.. simulink-diagram:: Dyn_PointMass_r2019b
-  :dir: ../../Src/3DoF/Simulink
-  :addpath: ../../Common/Environment;../../Common/FlightController;
-      ../../Common/Flightpaths;../../Common/Flightpaths/boothLem;
-      ../../Common/GroundStation;../../Common/Tether;../../Common/Visualisation;
-      ../..;../../..
-  :subsystem: GroundSystem/StateMachine
+.. image:: simulink_images/Dyn_PointMass_r2019b_GroundSystem_StateMachine.png
 
 .. automodule:: Src.Common.GroundStation
   :members:
@@ -132,14 +97,7 @@ The functions are described inside simulink.
 The following image shows the what the inputs and outputs are of the tether module.
 This subsystem is similar for both 3DoF and 6DoF simulations.
 
-
-.. simulink-diagram:: Dyn_PointMass_r2019b
-  :dir: ../../Src/3DoF/Simulink
-  :addpath: ../../Common/Environment;../../Common/FlightController;
-      ../../Common/Flightpaths;../../Common/Flightpaths/boothLem;
-      ../../Common/GroundStation;../../Common/Tether;../../Common/Visualisation;
-      ../..;../../..
-  :subsystem: ParticleTetherModel/Tether
+.. image:: simulink_images/Dyn_PointMass_r2019b_ParticleTetherModel_Tether.png
 
 .. automodule:: Src.Common.Tether
   :members:
