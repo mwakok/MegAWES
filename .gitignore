@@ -1,12 +1,22 @@
+# Matlab cache
 *.slxc
-slprj/
-**/.DS_Store
 *.prj
 *.slx.*
-resources/
+*.asv
 *.m~
 *_msf.*
 **/Cache_temp
 git.m
-Extra/*.mp4
+
+# Documentation
+Docs/source/simulink_images/
+Docs./build/
+
+# Folders
+resources/
+slprj/
+
+# Files
 Run_All_Rishi.m
+Extra/*.mp4
+**/.DS_Store
