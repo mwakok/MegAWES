@@ -35,7 +35,7 @@ jobs:
       - name: Run commands
         uses: matlab-actions/run-command@v2
         with:
-          command: addpath("Src/Offline_visualisation"), exportSimulinkImages('Docs/source/simulink_images.json');
+          command: addpath("Src/Offline_visualisation"), exportSimulinkImages('Docs/source/simulink_images.json', 'Docs/source/simulink-images/');
       
       # Store the images as an artifact for later use
       - name: Upload images as artifact
