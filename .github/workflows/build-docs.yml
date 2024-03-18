@@ -30,6 +30,12 @@ jobs:
         with:
           release: latest
           products: Simulink
+          cache: true
+
+      - name: CLI matlab
+      - run: sudo apt-get install xvfb
+      - run: xvfb-run matlab -batch "addpath(genpath("Src")), exportSimulinkImages('Docs/source/simulink_images.json', 'Docs/source/simulink-images/');"
+
 
       # Run script
       - name: Run commands
