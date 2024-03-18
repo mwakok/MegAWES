@@ -12,7 +12,6 @@
 % See the License for the specific language governing permissions and
 % limitations under the License.
 
-
 function exportSimulinkImages(jsonFile, outputFolder)
 %Export Simulink model images to png from json input file
 %
@@ -31,32 +30,40 @@ end
 baseModels = fieldnames(jsonInput);
 for i = 1:numel(baseModels)
     
-    % Load Simulink model in memory
-    load_system(baseModels{i})
-
     % Get the submodels for this base model
     subModels = jsonInput.(baseModels{i});
 
+    % Load Simulink model in memory
+    load_system(baseModels{i})
+
     % Save images of all submodels in the basemodel
-    saveImages(baseModels{i}, subModels, outputFolder)
+    for j = 1:numel(subModels)
+        saveSimulinkImage(baseModels{i}, subModels{j}, outputFolder)
+    end
 
     % Remove Simulink model from memory
     close_system(baseModels{i})
-end
-
-end
-
-
-function saveImages(baseModel, subModels, outputFolder)
-%Save the Simulink image to the output directory
-
-for j = 1:numel(subModels)
-    modelToExport = getSubmodelName(baseModel, subModels{j});
-    exportFile = fullfile(outputFolder, replace(modelToExport, '/', '_'));
-    fprintf('Exporting "%s" \n', modelToExport)
-    print(['-s', modelToExport], '-dpng', [ exportFile, '.png'], '-r300')
     
 end
+
+end
+
+
+function saveSimulinkImage(baseModel, subModel, outputFolder)
+%Save the Simulink image to the output directory
+%
+% :param baseModel: base Simulink model
+% :param subModel: path to the Simulink submodel
+% :param outputFolder: String of output directory
+
+% Get model path 
+modelToExport = getSubmodelName(baseModel, subModel);
+exportFile = fullfile(outputFolder, replace(modelToExport, '/', '_'));
+
+% Save model image
+fprintf('Exporting "%s" \n', modelToExport)
+saveas(get_param(modelToExport, 'Handle'), [ exportFile, '.png']);
+
 end
 
 
